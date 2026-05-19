@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRIDGE | ISARIC Data Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bridge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">ISARIC Data Tools</a>
+                <nav class="nav-desktop">
+                    <a href="../index.html">Home</a>
+                    <a href="ccp.html">CCP</a>
+                    <a href="arc.html">ARC</a>
+                    <a href="bridge.html" class="active">BRIDGE</a>
+                    <a href="redcap.html">REDCap</a>
+                    <a href="vertex.html">VERTEX</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero específico do BRIDGE -->
+    <section class="bridge-hero">
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                ← Back to Home
+            </a>
+            <h1>BRIDGE</h1>
+            <p>Web Application for CRF Generation</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="bridge-layout">
+            <!-- Menu lateral -->
+            <aside class="sidebar-menu" id="sidebar">
+                <div class="menu-toggle">
+                    <button class="toggle-btn" id="toggleSidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu-item active" data-section="overview">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </span>
+                    <span>Overview</span>
+                </div>
+                <div class="menu-item" data-section="setup">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </span>
+                    <span>Setup & Configuration</span>
+                </div>
+                <div class="menu-item" data-section="howto">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </span>
+                    <span>How to</span>
+                </div>
+            </aside>
+
+            <!-- Conteúdo principal -->
+            <div class="bridge-content">
+                <!-- Overview Section -->
+                <div id="overview" class="content-section active">
+                    <h2>Overview</h2>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Access ISARIC BRIDGE web application here: <a href="https://isaric-bridge.replit.app" target="_blank">https://isaric-bridge.replit.app</a></p>
+                    </div>
+                    
+                    <h3>Introduction</h3>
+                    <p>BRIDGE is an ISARIC developed web application that assists in the creation of Clinical Report Forms (CRFs). It is based on <a href="arc.html">ARC (Analysis and Research Compendium)</a>.</p>
+                    
+                    <p>BRIDGE is a web-based application designed to operationalize ARC and edit any ISARIC CRF and tailor it to an outbreak's particular context. By selecting and customizing clinical questions and ensuring necessary data points for each, BRIDGE automates the creation of Case Report Forms (CRFs) for each disease and specific research context. It generates the data dictionary and XML needed to create a REDCap database for capturing data in the ARC structure. Additionally, it produces paper-like versions of the CRFs and completion guides.</p>
+                    
+                    <h3>Structure</h3>
+                    <p>BRIDGE is divided into three components:</p>
+                    
+                    <div class="structure-grid">
+                        <div class="structure-card">
+                            <div class="structure-number">1</div>
+                            <h4>Tool Bar</h4>
+                            <p>Located on the left, allows the user to enter the settings and the templates. To open each, click on the respective icon and click back when you want to return to the general view.</p>
+                        </div>
+                        <div class="structure-card">
+                            <div class="structure-number">2</div>
+                            <h4>ARC Checkable Tree</h4>
+                            <p>Located in the central panel. Presents ARC as a tree structure with different levels: ARC version, forms, sections, and questions.</p>
+                        </div>
+                        <div class="structure-card">
+                            <div class="structure-number">3</div>
+                            <h4>CRF Representation Panel</h4>
+                            <p>Shows how the CRF will appear when generated, including selected questions and support questions needed to be functional (automatically added by BRIDGE).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_structure.png" alt="BRIDGE Structure - Three components layout">
+                            <p>BRIDGE structure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Setup & Configuration Section -->
+                <div id="setup" class="content-section">
+                    <h2>Setup & Configuration</h2>
+                    
+                    <h3>Settings</h3>
+                    <p>In the settings panel, users can select the version of ARC they want to use and the BRIDGE outcomes they want to generate:</p>
+                    
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <strong>📄 ISARIC Clinical Characterization XML</strong>
+                            <p>This file can be used to generate a REDCap project. It contains the clinical characterization structure that can be uploaded to REDCap to generate a project that allows data capture in the ARC structure.</p>
+                        </div>
+                        <div class="setting-item">
+                            <strong>📊 REDCap Data Dictionary</strong>
+                            <p>This CSV file can be used to add the specific forms and questions selected in BRIDGE to the REDCap project.</p>
+                        </div>
+                        <div class="setting-item">
+                            <strong>📑 Paper-like CRF</strong>
+                            <p>This is a PDF file that can be printed and used to collect data manually, allowing sites that cannot capture data electronically to collect information that can later be uploaded to the REDCap database.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_settings.png" alt="BRIDGE Settings Panel">
+                            <p>BRIDGE Settings Panel</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Templates</h3>
+                    <p>Templates are pre-selected groups of questions. Users can click on the Templates tab and select those they want to include in the CRF.</p>
+                    
+                    <p>ISARIC templates allow users to start the CRF creation process based on a set of pre-selected questions that ISARIC has curated for a particular disease or score.</p>
+                    
+                    <div class="templates-grid">
+                        <div class="template-card">
+                            <h4>Disease Templates</h4>
+                            <p>Generated by the ISARIC network following the CRF creation process to ensure questions are adequate and sufficient to answer pertinent research questions.</p>
+                            <p class="template-contact">For more information about the ISARIC creation process, please write to <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                        </div>
+                        <div class="template-card">
+                            <h4>Score Templates</h4>
+                            <p>Subsets of questions necessary to compute commonly used clinical scores, for example, the Charlson Comorbidity Index or SOFA.</p>
+                        </div>
+                    </div>
+                    
+                    <p>If multiple templates are selected, the obtained CRF is the union of the questions from all the selected templates. Additionally, the CRF can be customized (see <strong>How to Create a CRF with BRIDGE</strong> section).</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_tree.png" alt="BRIDGE Tree Structure">
+                            <p>BRIDGE Tree Structure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How To Section -->
+                <div id="howto" class="content-section">
+                    <h2>How to</h2>
+                    
+                    <h3>How to Create a CRF with BRIDGE</h3>
+                    <p>To create a CRF in BRIDGE, users need to navigate the checkable tree and select the questions they want to include in the CRF. After this is done, a representation of the questions will appear in the CRF representation panel.</p>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Sometimes additional questions will appear because BRIDGE handles retro-inclusion of questions. For example, when the user checks the 'Pregnant' question, the 'Sex at birth' question is also added to the CRF.</p>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_example1.png" alt="BRIDGE Example - Retro-inclusion">
+                            <p>BRIDGE Example - Retro-inclusion</p>
+                        </div>
+                    </div>
+                    
+                    <p>Similarly, BRIDGE also generates and adds questions that improve electronic data collection. For example, when the user selects the question 'Other sign(s) or abnormality,' additional questions are added that promote the inclusion of up to five additional unlisted signs at presentation.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_example2.png" alt="BRIDGE Example - Electronic data collection">
+                            <p>BRIDGE Example - Electronic data collection enhancement</p>
+                        </div>
+                    </div>
+                    
+                    <h3>User Defined Questions</h3>
+                    <p>In addition to allowing the selection of questions for a particular CRF, BRIDGE allows further question customization in the following ways:</p>
+                    
+                    <h4>Select Units Question</h4>
+                    <p>Measurement units can be selected in questions that have the text <strong>'(select units)'</strong> in the label. Users can select the units they want to include in the CRF, and BRIDGE will add the pertinent questions for this.</p>
+                    
+                    <div class="example-description">
+                        <p><strong>Example:</strong> If a user selects a single unit for a question, such as cm in 'Height,' the numeric question 'Height (cm)' will be added. If the user selects multiple units, such as cm and in, BRIDGE will generate a numeric question for 'Height' and another radio question for 'Select Height units' with the selected units.</p>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_selectunits.png" alt="Select Units Example">
+                            <p>BRIDGE Example - Selecting measurement units for a variable</p>
+                        </div>
+                    </div>
+                    
+                    <h4>User List Question</h4>
+                    <p>For particular questions, the options that are adequate for the disease and/or site can be selected by the user. The user needs to click the <strong>LABEL</strong> of the question with this symbol <strong>↳</strong> in the checkable tree. This will open a new window that allows users to select the pertinent options for such questions.</p>
+                    
+                    <div class="example-description">
+                        <p><strong>Result:</strong> This will generate a radio question with the user-selected options and the 'Other' option. It will also generate a dropdown question with the options that were not selected by the user, which corresponds to a second layer of possible options to limit free text. A third question for free text is also added and will appear in electronic capture when the 'Other' option in the second layer dropdown is selected.</p>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/bridge_userlist.png" alt="User List Example">
+                            <p>BRIDGE Example - Selecting user-defined options for a variable</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Multi List Question</h4>
+                    <p>The question with this symbol on the label <strong>⇉</strong> has a similar behavior to the 'User list' question, with the only difference being that the layer one options are checkboxes, not radios, allowing multiple selections.</p>
+                    
+                    <p>After choosing the variables, users can generate the pertinent files. They need to enter a CRF name in the textbox below the CRF representation panel and click the generate button.</p>
+                    
+                    <h3>How to Use BRIDGE Generated Files</h3>
+                    <p>As mentioned, BRIDGE generates three files:</p>
+                    
+                    <div class="generated-files">
+                        <div class="file-card">
+                            <span class="file-icon">📄</span>
+                            <div>
+                                <strong>ISARIC Clinical Characterization XML</strong>
+                                <p>This XML file can be used to create a project in REDCap. Navigate to the 'Project Setup' section in REDCap, and under 'Design your data collection instruments & enable your project,' click on 'Upload Instrument Zip file' and upload the XML file generated by BRIDGE.</p>
+                            </div>
+                        </div>
+                        <div class="figure-placeholder">
+                            <div class="image-placeholder small">
+                                <img src="../assets/images/bridge_redcapxml.png" alt="REDCap XML Upload">
+                                <p>BRIDGE Example - Upload XML to REDCap</p>
+                            </div>
+                        </div>
+                        
+                        <div class="file-card">
+                            <span class="file-icon">📊</span>
+                            <div>
+                                <strong>REDCap Data Dictionary CSV</strong>
+                                <p>This CSV file can be used to update an existing REDCap project. Go to the 'Data Dictionary' section in REDCap, click 'Choose File,' and upload the CSV file generated by BRIDGE. Click 'Upload File' to apply the changes.</p>
+                            </div>
+                        </div>
+                        <div class="figure-placeholder">
+                            <div class="image-placeholder small">
+                                <img src="../assets/images/bridge_redcapcsv.png" alt="REDCap CSV Upload">
+                                <p>BRIDGE Example - Upload CSV to REDCap</p>
+                            </div>
+                        </div>
+                        
+                        <div class="file-card">
+                            <span class="file-icon">📑</span>
+                            <div>
+                                <strong>Paper-like CRF</strong>
+                                <p>This PDF file can be printed and used for manual data capture in sites that cannot collect data electronically. The collected data can later be entered into the REDCap database.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>This file creates a REDCap project with the following event structure:</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/events_and_intruments.png" alt="REDCap Events and Instruments">
+                            <p>BRIDGE Example - REDCap event structure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Access ISARIC BRIDGE web application: <a href="https://isaric-bridge.replit.app" target="_blank">https://isaric-bridge.replit.app</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <p>Comprehensive guide to analytical tools for healthcare research and epidemiology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="quick-links-grid">
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="ccp.html">CCP</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="arc.html">ARC</a></li>
+                                <li><a href="bridge.html">BRIDGE</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="redcap.html">REDCap</a></li>
+                                <li><a href="vertex.html">VERTEX</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>For more information about our analytical tools and services.</p>
+                    <p class="contact-email">
+                        <a href="mailto:data@isaric.org">data@isaric.org</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="https://isaric.org" target="_blank">ISARIC</a>
+                    <span class="separator">|</span>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>
+                </div>
+                <p class="footer-copyright">Licensed by ISARIC on behalf of Oxford University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/bridge.js"></script>
+</body>
+</html>

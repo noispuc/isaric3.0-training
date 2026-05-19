@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDCap | ISARIC Data Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/redcap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">ISARIC Data Tools</a>
+                <nav class="nav-desktop">
+                    <a href="../index.html">Home</a>
+                    <a href="ccp.html">CCP</a>
+                    <a href="arc.html">ARC</a>
+                    <a href="bridge.html">BRIDGE</a>
+                    <a href="redcap.html" class="active">REDCap</a>
+                    <a href="vertex.html">VERTEX</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero específico do REDCap -->
+    <section class="redcap-hero">
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                ← Back to Home
+            </a>
+            <h1>REDCap</h1>
+            <p>Research Electronic Data Capture</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="redcap-layout">
+            <!-- Menu lateral -->
+            <aside class="sidebar-menu" id="sidebar">
+                <div class="menu-toggle">
+                    <button class="toggle-btn" id="toggleSidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu-item active" data-section="overview">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </span>
+                    <span>Overview</span>
+                </div>
+                <div class="menu-item" data-section="setup">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </span>
+                    <span>Setup & Configuration</span>
+                </div>
+                <div class="menu-item" data-section="howto">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </span>
+                    <span>How to</span>
+                </div>
+                <div class="menu-item" data-section="datasharing">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4v16h16V4H4z"></path>
+                            <path d="M8 9h8M8 13h6M8 17h4"></path>
+                        </svg>
+                    </span>
+                    <span>Data Sharing</span>
+                </div>
+            </aside>
+
+            <!-- Conteúdo principal -->
+            <div class="redcap-content">
+                <!-- Overview Section -->
+                <div id="overview" class="content-section active">
+                    <h2>Overview</h2>
+                    
+                    <div class="note-box warning">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EE031E">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p><strong>Important:</strong> REDCap is developed and maintained by Vanderbilt University. It is <strong>not an ISARIC tool</strong> but integrates seamlessly with the ISARIC analytical framework.</p>
+                    </div>
+                    
+                    <h3>Integration with ISARIC Tools</h3>
+                    <p>REDCap plays a key role in the ISARIC ecosystem:</p>
+                    
+                    <div class="integration-grid">
+                        <div class="integration-card">
+                            <div class="integration-icon">🔗</div>
+                            <div>
+                                <strong>BRIDGE Integration</strong>
+                                <p>BRIDGE generates the data dictionary and XML needed to create a REDCap database for capturing data in the ARC structure.</p>
+                            </div>
+                        </div>
+                        <div class="integration-card">
+                            <div class="integration-icon">📊</div>
+                            <div>
+                                <strong>VERTEX Integration</strong>
+                                <p>VERTEX can retrieve data from a REDCap database using the API to execute analysis code and answer research questions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>ISARIC REDCap Instance</h3>
+                    <p>Databases hosted on the ISARIC instance of REDCap are accessible at:</p>
+                    <div class="url-box">
+                        <code>https://ncov.medsci.ox.ac.uk</code>
+                    </div>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>If you have collected data on another electronic data capture system and wish to share it on the ISARIC Platform, please contact us at <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Setup & Configuration Section -->
+                <div id="setup" class="content-section">
+                    <h2>Setup & Configuration</h2>
+                    
+                    <h3>Scope</h3>
+                    <p>This guide applies to databases hosted on the ISARIC instance of REDCap.</p>
+                    
+                    <h3>Purpose</h3>
+                    <p>The purpose of this guide is to ensure:</p>
+                    <ul>
+                        <li>that the database is accessed only by delegated study staff</li>
+                        <li>that study staff are familiar with the functioning of the study database</li>
+                        <li>that data in the database is secure</li>
+                    </ul>
+                    
+                    <h3>Responsibility</h3>
+                    <p>The principal investigator is responsible to determine who has access to the study database. Study staff are responsible for protecting their access credentials, entering data to the database, and ensuring the accuracy of the data entered.</p>
+                    
+                    <h3>Request for Access to a Database</h3>
+                    
+                    <h4>Approval</h4>
+                    <p>Access to a REDCap database must be approved by the Site Principal Investigator (PI) or an individual delegated by the PI.</p>
+                    
+                    <h4>Individual Account</h4>
+                    <p>Access is granted to individual staff members. Accounts cannot be shared, and passwords must be kept secure.</p>
+                    
+                    <h4>Request</h4>
+                    <p>To request access to a REDCap database, an email must be sent by the site PI or their delegate to the Central Coordinating Office (CCO) at <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                    <p>The request must include:</p>
+                    <ul>
+                        <li>The name of the database</li>
+                        <li>The first and last name of the individual</li>
+                        <li>Their email address</li>
+                        <li>Their data entry role</li>
+                        <li>The name of the site the individual should be assigned, if relevant</li>
+                    </ul>
+                    
+                    <h4>Credentials</h4>
+                    <p>Once access is granted, the new user will receive:</p>
+                    <ul>
+                        <li>An automatic email from REDCap containing a username, a temporary password, and the link to access the database</li>
+                        <li>An email from the CCO including their site code</li>
+                    </ul>
+                    <p>Upon first login, users will be prompted to set a new, secure password.</p>
+                    
+                    <h3>Logging into ISARIC REDCap</h3>
+                    <p>Go to <code>https://ncov.medsci.ox.ac.uk</code> - the link will be in the email you are sent.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/logging.jpg" alt="REDCap Login Screen">
+                            <p>REDCap Login Page</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Accessing Your Project</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/access.jpg" alt="REDCap Project Access">
+                            <p>REDCap Project Access</p>
+                        </div>
+                    </div>
+                    
+                    <h3>REDCap Side Bar</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/side_bar.jpg" alt="REDCap Side Bar">
+                            <p>REDCap Side Bar</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Viewing the Record Status Dashboard</h3>
+                    <ul>
+                        <li>Displays all the records of your site</li>
+                        <li>Shows the instruments (forms) and the events (time points) to which they have been assigned in a longitudinal study</li>
+                        <li>Gives an overview of the progress of all your participants</li>
+                    </ul>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/viewing_dashboards.jpg" alt="Record Status Dashboard">
+                            <p>REDCap Record Status Dashboard</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How To Section - Data Entry -->
+                <div id="howto" class="content-section">
+                    <h2>How to - Data Entry</h2>
+                    
+                    <h3>Adding a New Record (Participant)</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/adding_newrecord_1.jpg" alt="Add New Record Step 1">
+                            <p>REDCap - Click Add New Record</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Incrementing the PIN</h4>
+                    <div class="figures-row">
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/adding_newrecord_2.jpg" alt="PIN Step 1">
+                                <p>REDCap - PIN Step 1</p>
+                            </div>
+                        </div>
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/adding_newrecord_3.jpg" alt="PIN Step 2">
+                                <p>REDCap - PIN Step 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Entering Data – Radio Button</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/enter_radio.jpg" alt="Radio Button Entry">
+                            <p>REDCap - Select one option from radio buttons</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Entering Data – Checkbox</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/enter_checkbox.jpg" alt="Checkbox Entry">
+                            <p>REDCap - Select multiple options from checkboxes</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Entering Data – Dropdown Fields</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/enter_dropdown.jpg" alt="Dropdown Entry">
+                            <p>REDCap - Select from dropdown menu</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Entering Data – Missing Codes</h3>
+                    <p>Fields that have a blank/missing value may be marked with a custom 'Missing Data Code' to note why the value is blank. These missing codes may be used to aid in data analysis by specifying why a field lacks a value.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/enter_missing.jpg" alt="Missing Codes">
+                            <p>REDCap - Mark missing data with codes</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Saving a Form</h3>
+                    <div class="figures-row">
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/saving_form.jpg" alt="Save Form">
+                                <p>REDCap - Save Form</p>
+                            </div>
+                        </div>
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/saving_form_2.jpg" alt="Save Options">
+                                <p>REDCap - Save options</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Viewing a Participant Record Home Page</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/view_participant_home.jpg" alt="Participant Home">
+                            <p>REDCap - Participant record overview</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Entry – Results Out of Range</h3>
+                    <p>Some questions have a validation rule for data quality (e.g. value out of a specific range).</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/out_range.jpg" alt="Out of Range Validation">
+                            <p>REDCap - Validation warning for out of range values</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Entry – Adding Repeating Events</h3>
+                    <p>The Daily form is a repeating event: the form can be repeated as many times as needed, e.g., for first day of hospitalisation, second day of hospitalisation, etc.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/repeating_events.jpg" alt="Repeating Events">
+                            <p>REDCap - Add repeating event</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Entry – Navigating Repeating Events</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/nav_repeating_events.jpg" alt="Navigate Repeating Events">
+                            <p>REDCap - Navigate between event instances</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Entry – Adding Repeating Instruments</h3>
+                    <p>The Medication form is a repeating instrument: the form can be repeated as many times as needed, e.g., for each medication taken to treat the pathogen.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/repeating_instruments.jpg" alt="Repeating Instruments">
+                            <p>REDCap - Add repeating instrument</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Entry – Navigating Repeating Instruments</h3>
+                    
+                    <h4>From a Medication Form</h4>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/nav_repeating_instruments.jpg" alt="Navigate from Form">
+                            <p>REDCap - Navigate from Form</p>
+                        </div>
+                    </div>
+                    
+                    <h4>From the Participant's Record Home Page</h4>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/nav_repeating_instruments_2.jpg" alt="Navigate from Home">
+                            <p>REDCap - Navigate from Home</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Deleting Data – Forms</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/deleting_forms.jpg" alt="Delete Forms">
+                            <p>REDCap - Delete Forms</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Deleting Data – Events</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/deleting_events.jpg" alt="Delete Events">
+                            <p>REDCap - Delete Events</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Deleting Data – Entire Record (Participant)</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/deleting_record.jpg" alt="Delete Record">
+                            <p>REDCap - Delete Record</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Navigating Between Several Sites (DAGs)</h3>
+                    <p>Some users may enter data for several sites and are assigned to several DAGs (Data Access Groups).</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/nav_dags.jpg" alt="Navigate DAGs">
+                            <p>REDCap - Switch between Data Access Groups</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Data Security – Logging Out</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/logging_out.jpg" alt="Logout">
+                            <p>REDCap - Always log out when finished</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Help and Additional Resources</h3>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/help.jpg" alt="Help Resources">
+                            <p>REDCap - Access help documentation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Sharing Section -->
+                <div id="datasharing" class="content-section">
+                    <h2>Data Sharing Guidance</h2>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>If you have collected data on your own instance of REDCap and wish to share it on the ISARIC Platform, please follow the steps below.</p>
+                    </div>
+                    
+                    <h3>STEP 1: Signing Terms of Data Submission</h3>
+                    <p>Ensure that Terms of Data Submission are in place before proceeding.</p>
+                    
+                    <h3>STEP 2: Sharing the Data Dictionary</h3>
+                    <p>Share the data dictionary of your REDCap Project.</p>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>If you used BRIDGE to build your CRF, it will be really useful if you can also share with us any change in name of the variable, name on the label or choices of answers. This impacts the mapping of the data to integrate them in our data platform, and it will be easier with those changes clearly identified.</p>
+                    </div>
+                    
+                    <h4>How to Download the Data Dictionary?</h4>
+                    <p>On the menu click on "Dictionary" then click on "Download the current Data Dictionary".</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_dictionnary.png" alt="Download Data Dictionary">
+                            <p>REDCap - Download Data Dictionary</p>
+                        </div>
+                    </div>
+                    
+                    <h3>STEP 3: Sharing the Data</h3>
+                    <p>There are two options for sharing the data with us: either by providing access to your API or by securely sharing the data in a CSV file.</p>
+                    
+                    <h4>OPTION 1: Providing Access to Your API</h4>
+                    <p>We can access your data directly through the REDCap API. To do this, you will need to:</p>
+                    <ol>
+                        <li>Add the ISARIC data manager as a user on your REDCap instance</li>
+                        <li>Grant them access to your database</li>
+                        <li>Generate an API token for them to enable access</li>
+                    </ol>
+                    
+                    <h5>1. Add the ISARIC data manager as a new user on your REDCap instance</h5>
+                    <p>Click on "Control Center".</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_adduser.png" alt="Control Center">
+                            <p>REDCap - Add User</p>
+                        </div>
+                    </div>
+                    
+                    <p>Click on "Add Users (Table-based Only)".</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_adduser2.png" alt="Add Users">
+                            <p>REDCap - Add Users</p>
+                        </div>
+                    </div>
+                    
+                    <p>Complete the information and click on "Save" at the bottom of the page. The user account will be created.</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_adduser3.png" alt="Complete User Info">
+                            <p>REDCap - Complete User Info</p>
+                        </div>
+                    </div>
+                    
+                    <h5>2. Grant them access to your database</h5>
+                    <div class="figures-row">
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/datasharing_access.png" alt="Grant Access">
+                                <p>REDCap - Grant Access</p>
+                            </div>
+                        </div>
+                        <div class="figure-placeholder half">
+                            <div class="image-placeholder">
+                                <img src="../assets/images/datasharing_access2.png" alt="Access Privileges">
+                                <p>REDCap - Access Privileges</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Click on "Add user". The ISARIC Data Manager will be notified that they now have access to the database. They will access the REDCap project and request an API token and send you a message to inform you the request has been made.</p>
+                    
+                    <h5>3. Generate an API token for them to enable access</h5>
+                    <p>The API token request from the ISARIC Data Manager will appear in the Control Center "To-Do List". If you do not have Administrator rights, please ask your administrator to approve this request.</p>
+                    
+                    <p>Click on To-Do List.</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_api1.png" alt="To-Do List">
+                            <p>REDCap - To-Do List</p>
+                        </div>
+                    </div>
+                    
+                    <p>Click on the green tick to approve the request.</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_api2.png" alt="Approve Request">
+                            <p>REDCap - Approve Request</p>
+                        </div>
+                    </div>
+                    
+                    <p>The ISARIC Data Manager can now export directly from your database the data.</p>
+                    
+                    <h4>OPTION 2: Securely Sharing a CSV File</h4>
+                    
+                    <h5>1. Download the data in CSV</h5>
+                    <p>In the REDCap side bar, click on "Data Exports, Reports and Stats" then on "Export Data".</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_csv1.png" alt="Export Data">
+                            <p>REDCap - Export Data</p>
+                        </div>
+                    </div>
+                    
+                    <p>Choose "CSV/Microsoft Excel (raw data)" then "Export Data". A pop-up window appears; click on the icon to download the data.</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_csv2.png" alt="Download CSV">
+                            <p>REDCap - Download CSV</p>
+                        </div>
+                    </div>
+                    
+                    <h5>2. Send securely the data</h5>
+                    <div class="note-box warning">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EE031E">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p><strong>Do not send your data by email</strong> – it is not secure. REDCap has an integrated secure tool for sending data.</p>
+                    </div>
+                    
+                    <p>Click on the Welcome page of REDCap on "Send-It".</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_sending1.png" alt="Send-It">
+                            <p>REDCap - Send-It</p>
+                        </div>
+                    </div>
+                    
+                    <p>Complete the address of the ISARIC Data Manager, email subject, and select your CSV file, then click on "Send it".</p>
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/datasharing_sending2.png" alt="Send File">
+                            <p>REDCap - Send File</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>If your file is larger than the max file size of 128MB, please contact us at <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <p>Comprehensive guide to analytical tools for healthcare research and epidemiology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="quick-links-grid">
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="ccp.html">CCP</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="arc.html">ARC</a></li>
+                                <li><a href="bridge.html">BRIDGE</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="redcap.html">REDCap</a></li>
+                                <li><a href="vertex.html">VERTEX</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>For more information about our analytical tools and services.</p>
+                    <p class="contact-email">
+                        <a href="mailto:data@isaric.org">data@isaric.org</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="https://isaric.org" target="_blank">ISARIC</a>
+                    <span class="separator">|</span>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>
+                </div>
+                <p class="footer-copyright">Licensed by ISARIC on behalf of Oxford University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/redcap.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERTEX | ISARIC Data Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vertex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">ISARIC Data Tools</a>
+                <nav class="nav-desktop">
+                    <a href="../index.html">Home</a>
+                    <a href="ccp.html">CCP</a>
+                    <a href="arc.html">ARC</a>
+                    <a href="bridge.html">BRIDGE</a>
+                    <a href="redcap.html">REDCap</a>
+                    <a href="vertex.html" class="active">VERTEX</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero específico do VERTEX -->
+    <section class="vertex-hero">
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                ← Back to Home
+            </a>
+            <h1>VERTEX</h1>
+            <p>Advanced Data Analysis and Visualization Platform</p>
+        </div>
+    </section>
+
+    <main>
+    <!-- Layout com menu lateral -->
+    <div class="vertex-layout">
+        <!-- Menu lateral -->
+        <aside class="sidebar-menu" id="sidebar">
+            <div class="menu-toggle">
+                <button class="toggle-btn" id="toggleSidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="menu-item active" data-section="overview">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                </span>
+                <span>Overview</span>
+            </div>
+            <div class="menu-item" data-section="setup">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </span>
+                <span>Setup & Configuration</span>
+            </div>
+            <div class="menu-item" data-section="howto">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </span>
+                <span>How to</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+<div class="vertex-content">
+    <!-- Overview Section -->
+    <div id="overview" class="content-section active">
+        <h2>Overview</h2>
+        
+        <h3>Purpose</h3>
+        <p>This guide provides a brief introduction to the Visual Evidence & Research Tool for Exploration (VERTEX) dashboard and the Reusable Analytical Pipelines for Infectious Diseases (RAPID) code framework. It provides instructions for how to run the base VERTEX software on your local machine.</p>
+        
+        <h3>Introduction</h3>
+        <p>VERTEX is a web-based Python application that presents graphs and tables relating to research questions that need to be quickly answered during an outbreak. This helps identification of key epidemiological factors and supports data-driven decision-making.</p>
+        
+        <!-- Figura no Overview -->
+        <div class="figure-placeholder">
+            <div class="image-placeholder">
+                <img src="../assets/images/vertex_starting-insight-panel_1.png" alt="VERTEX Insight Panel">
+                <p>VERTEX - Starting Insight Panel</p>
+            </div>
+        </div>
+        
+        <h3>Open Source</h3>
+        <p>VERTEX is open-source, which means that you can access and download the codebase from GitHub, and create new analysis projects for your analysis.</p>
+        
+        <div class="links-icons">
+            <a href="https://github.com/ISARICResearch/VERTEX/blob/main/README.md" target="_blank" class="icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                <span>GitHub Repository</span>
+            </a>
+            <a href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/" target="_blank" class="icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+                <span>RAPID Framework</span>
+            </a>
+        </div>
+        
+        <h3>Types of Projects</h3>
+        <p>At the moment, the VERTEX dashboard can display two types of projects.</p>
+        
+        <h4>Analysis Projects</h4>
+        <p>Analysis projects retrieve data from a REDCap database using the API, preprocess this patient-level data and execute analysis code to answer research questions from a statistical analysis plan. The output of this analysis code is a series of figures and tables, which are presented in the dashboard, grouped together in insight panels.</p>
+        
+        <p>For structuring analysis code, we borrow a concept called Reproducible Analytical Pipelines. This is intended to make analysis reproducible, efficient and auditable. We extend this concept to Reusable Analytical Pipelines for Infectious Diseases (RAPIDs), which supports the transportation of these pipelines to answer the similar research questions in similar contexts.</p>
+        
+        <h4>Static Projects</h4>
+        <p>Static projects do not execute the analysis pipelines, but reproduce the figures and tables directly from aggregated (not patient-level) data files. These files can be provided directly or can be automatically created when the users runs an analysis project.</p>
+        
+        <div class="note-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p>Each type of figure requires aggregated data in a specific structure, with accompanying metadata to provide other input parameters. We are currently refining this, so we do not have up-to-date documentation about each figure type. However, we can support this if you have aggregated data and you want to present results within a dashboard.</p>
+        </div>
+    </div>
+
+    <!-- Setup & Configuration Section -->
+<div id="setup" class="content-section">
+    <h2>Setup & Configuration</h2>
+    
+    <h3>Installation and Usage</h3>
+    <p>To use VERTEX locally, clone the VERTEX GitHub repository and make sure that you have Python installed. There are several ways to run the VERTEX code.</p>
+    
+    <div class="links-icons">
+        <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository" target="_blank" class="icon-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>Git Clone Guide</span>
+        </a>
+        <a href="https://git-scm.com/install/" target="_blank" class="icon-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+                <polyline points="8 12 12 16 16 12"/>
+                <line x1="12" y1="2" x2="12" y2="16"/>
+            </svg>
+            <span>Git Install</span>
+        </a>
+        <a href="https://docs.docker.com/engine/install/" target="_blank" class="icon-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 4h16v16H4z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <span>Docker Install</span>
+        </a>
+        <a href="https://code.visualstudio.com/docs/languages/python" target="_blank" class="icon-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polygon points="12 2 22 7 22 17 12 22 2 17 2 7 12 2"/>
+                <line x1="12" y1="22" x2="12" y2="12"/>
+                <polyline points="22 7 12 12 2 7"/>
+            </svg>
+            <span>VSCode Python</span>
+        </a>
+    </div>
+    
+    <p>We will demonstrate how to run the code at the command line using Docker and in VSCode without Docker, though we recommend using Docker if possible.</p>
+    
+    <h4>Docker at the command line</h4>
+    <p>On the command line, navigate to the repository. Depending on how you cloned the repository, this may be in your Downloads folder or in the current working directory.</p>
+    <p>We recommend using Docker if you want to run VERTEX at the command line. You can build and run a Docker container for VERTEX with the following:</p>
+    
+    <pre><code>docker build -t isaric-vertex .
+docker run -it --rm -v "$PWD":/app -p 8050:8050 isaric-vertex gunicorn --workers 1 --reload --bind 0.0.0.0:8050 vertex.descriptive_dashboard:server</code></pre>
+    
+    <div class="note-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>For using Docker within VSCode, see the <a href="https://code.visualstudio.com/docs/containers/overview" target="_blank">VSCode Docker documentation</a>.</p>
+    </div>
+    
+    <h4>VSCode without Docker</h4>
+    <p>Open the VERTEX folder within VSCode. You need to create an environment from the VERTEX requirements. The simplest way to do this is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on MacOS), then click "Python: Create Environment...", ".venv" and choose a Python version that is >3.9. This will install a virtual environment using the requirements listed in pyproject.toml.</p>
+    
+    <p>Next, you need to add a file <code>.vscode/launch.json</code> with the following:</p>
+    
+    <pre><code>{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ISARIC VERTEX",
+      "type": "python",
+      "request": "launch",
+      "module": "vertex.descriptive_dashboard",
+      "justMyCode": false,
+      "env": {
+      "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  ]
+}</code></pre>
+    
+    <p>You should now be able to run the application in debugging mode ("Run → Start Debugging") or without debugging ("Run → Run Without Debugging").</p>
+    
+    <div class="note-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>See the <a href="https://code.visualstudio.com/docs/python/environments" target="_blank">VSCode Python Environments documentation</a> for more details.</p>
+    </div>
+
+    <h3>VERTEX Dashboard</h3>
+    <p>Once the application is running at the terminal or in VSCode, you will be able to open the local VERTEX dashboard at <code>http://127.0.0.1:8050</code>. You will see a menu on the left, and a world map with a colorbar.</p>
+    
+    <div class="figure-placeholder">
+        <div class="image-placeholder">
+            <img src="../assets/images/vertex_starting-dashboard.png" alt="VERTEX Dashboard">
+            <p>VERTEX - Starting Dashboard</p>
+        </div>
+    </div>
+    
+    <p>At the top of the menu is listed the current open project. You can switch between active projects using the dropdown immediately below. The current active projects are analysis projects that use low-fidelity synthetic datasets and static projects showing the results from completed ISARIC analyses.</p>
+    
+    <p>The map shows the number of participants that were enrolled in this project by country. You can hover over each country for a more precise count of the number of participants.</p>
+    
+    <h4>Filters and Controls</h4>
+    <p>Below the project selection box in the menu are a set of tabs, which are mostly specific to the selected project. Analysis projects, which retrieve the up-to-date patient-level data from a REDCap database and directly execute analysis code, have a tab called Filters and Controls. If you click on this, it will open up to show a set of core variables: sex at birth, age, country, admission date and outcome. You can select different combinations, which will filter the patient-level data and update the map accordingly.</p>
+</div>
+
+    <!-- How To Section -->
+<div id="howto" class="content-section">
+    <h2>How to</h2>
+    
+    <h3>Creating a New VERTEX Project</h3>
+    <p>VERTEX is intended to run multiple projects. If you have a REDCap database that was created using ISARIC BRIDGE and have API access for your database, then you should be able to add a new project to your local VERTEX and display outputs from your analysis in a similar manner to the existing projects.</p>
+    
+    <p>For more information about creating a new project in VERTEX, please refer to the following guides. We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
+    
+    <div class="note-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
+    </div>
+    
+    <h3>Adding Insight Panels</h3>
+    <p>For all projects, the remaining tabs should each be relevant to a research question or a moment/event in the patient's journey. Each tab can be expanded to show one or more buttons, which may break this down further into group of related variables e.g. demographics and comorbidities. Each button will then open an object called an insight panel.</p>
+    
+    <p>Insight panels show the outputs of an analysis pipeline. At this time, this will mostly involve descriptive tables and summary figures displaying counts or proportions. We will continue to add new analyses as we build a larger collection of RAPIDs. As with the base page, analysis projects will have a tab for Filters and Controls and the code will be executed again if you filter the participants. This is not possible for static projects, which display fixed outputs.</p>
+    
+    <div class="figure-placeholder">
+        <div class="image-placeholder">
+            <img src="../assets/images/vertex_starting-insight-panel_2.png" alt="VERTEX Insight Panel">
+            <p>VERTEX - Insight Panel</p>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <p>Comprehensive guide to analytical tools for healthcare research and epidemiology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="quick-links-grid">
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="ccp.html">CCP</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="arc.html">ARC</a></li>
+                                <li><a href="bridge.html">BRIDGE</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="redcap.html">REDCap</a></li>
+                                <li><a href="vertex.html">VERTEX</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>For more information about our analytical tools and services.</p>
+                    <p class="contact-email">
+                        <a href="mailto:data@isaric.org">data@isaric.org</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="https://isaric.org" target="_blank">ISARIC</a>
+                    <span class="separator">|</span>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>
+                </div>
+                <p class="footer-copyright">Licensed by ISARIC on behalf of Oxford University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/vertex.js"></script>
+</body>
+</html>

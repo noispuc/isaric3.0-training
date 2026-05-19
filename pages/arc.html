@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC | ISARIC Data Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/arc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">ISARIC Data Tools</a>
+                <nav class="nav-desktop">
+                    <a href="../index.html">Home</a>
+                    <a href="ccp.html">CCP</a>
+                    <a href="arc.html" class="active">ARC</a>
+                    <a href="bridge.html">BRIDGE</a>
+                    <a href="redcap.html">REDCap</a>
+                    <a href="vertex.html">VERTEX</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero específico do ARC -->
+    <section class="arc-hero">
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                ← Back to Home
+            </a>
+            <h1>ARC</h1>
+            <p>Analysis and Research Compendium</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Layout com menu lateral -->
+        <div class="arc-layout">
+            <!-- Menu lateral -->
+            <aside class="sidebar-menu" id="sidebar">
+                <div class="menu-toggle">
+                    <button class="toggle-btn" id="toggleSidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu-item active" data-section="overview">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </span>
+                    <span>Overview</span>
+                </div>
+                <div class="menu-item" data-section="setup">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </span>
+                    <span>Setup & Configuration</span>
+                </div>
+                <div class="menu-item" data-section="howto">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </span>
+                    <span>How to</span>
+                </div>
+            </aside>
+
+            <!-- Conteúdo principal -->
+            <div class="arc-content">
+                <!-- Overview Section -->
+                <div id="overview" class="content-section active">
+                    <h2>Overview</h2>
+                    
+                    <h3>What is ARC?</h3>
+                    <p><strong>ARC (Analysis and Research Compendium)</strong> is a comprehensive library of harmonised questions designed to rapidly build standardised Case Report Forms (CRFs) for disease outbreaks. It covers a wide range of patient-related information, including demographics, comorbidities, signs and symptoms, medications, outcomes, and more.</p>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Each question in ARC has specific guidelines and relevant parameters, such as definitions, answer options, units, minimum and maximum limits, data types, and skip logic.</p>
+                    </div>
+                    
+                    <h3>Key Features</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Machine-Readable</strong>
+                                <p>ARC is provided in CSV format, making it easy for automated systems to read and process the data.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Open Access</strong>
+                                <p>Freely accessible for the research community. While contributions are limited, the document can be freely accessed and utilized by others.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Version Control</strong>
+                                <p>Maintained using GitHub's version control, ensuring document integrity, traceability of changes, and seamless collaboration.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Integration with BRIDGE</strong>
+                                <p>ARC is integrated into BRIDGE, our software tool for CRF generation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>ARC Components</h3>
+                    
+                    <h4>arc.csv</h4>
+                    <p>The machine-readable list of clinical and research questions. Each row represents a variable used in the CRFs, including metadata that ensures clarity, interoperability, and reusability across contexts.</p>
+                    
+                    <h4>Lists/</h4>
+                    <p>A collection of option lists containing standardised reference tables (conditions, demographics, and drugs) that support different response types while ensuring adaptability and consistency in data capture.</p>
+                    
+                    <h3>Data Capture Schema</h3>
+                    <p>The ARC data structure follows the Clinical Characterization data capture schema, defining key moments during a patient's journey:</p>
+                    
+                    <div class="schema-grid">
+                        <div class="schema-item">Illness onset <span>→ onset-to-care information</span></div>
+                        <div class="schema-item">Presentation <span>→ data when patient first presents to care</span></div>
+                        <div class="schema-item">Daily observation <span>→ repeated measurements throughout admission</span></div>
+                        <div class="schema-item">Outcome <span>→ information at discharge or death</span></div>
+                        <div class="schema-item">Follow-up <span>→ post-discharge information</span></div>
+                        <div class="schema-item">Summary <span>→ aggregate data spanning full admission</span></div>
+                    </div>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/characterizationSchema.png" alt="Clinical Characterization Data Capture Schema">
+                            <p>Characterization Schema</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Setup & Configuration Section -->
+                <div id="setup" class="content-section">
+                    <h2>Setup & Configuration</h2>
+                    
+                    <h3>How to Access ARC</h3>
+                    <p>To use ARC for your research or study, follow these steps:</p>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div>
+                                <strong>Access ARC</strong>
+                                <p>Download the latest version of ARC from the <a href="https://github.com/ISARICResearch/ARC" target="_blank">GitHub repository</a>.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div>
+                                <strong>Integration with BRIDGE</strong>
+                                <p>If you use the BRIDGE software tool, it connects to this GitHub repository to access all releases of ARC for CRF generation.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div>
+                                <strong>Contributions & Support</strong>
+                                <p>For questions, suggestions, or to request new questions for future ARC versions, contact us at: <a href="mailto:data@isaric.org">data@isaric.org</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="links-icons">
+                        <a href="https://github.com/ISARICResearch/ARC" target="_blank" class="icon-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            <span>GitHub Repository</span>
+                        </a>
+                        <a href="https://isaric-arc.readthedocs.io/" target="_blank" class="icon-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16v16H4z"/>
+                                <polyline points="4 9 12 13 20 9"/>
+                                <line x1="12" y1="13" x2="12" y2="22"/>
+                            </svg>
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- How To Section -->
+                <div id="howto" class="content-section">
+                    <h2>How to</h2>
+                    
+                    <h3>Understanding arc.csv Structure</h3>
+                    <p>Each row in <code>arc.csv</code> represents a variable with the following key fields:</p>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Description</th>
+                                    <th>Example Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Form</code></td>
+                                    <td>CRF form where the variable appears</td>
+                                    <td>Presentation</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Section</code></td>
+                                    <td>Subdivision within the form that groups related questions</td>
+                                    <td>CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Variable</code></td>
+                                    <td>Unique identifier used in the dataset</td>
+                                    <td><code>comor_hypertensi</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>Type</code></td>
+                                    <td>Format of the response field</td>
+                                    <td>radio</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Question</code></td>
+                                    <td>Human-readable text shown to the data collector</td>
+                                    <td>Hypertension</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Answer Options</code></td>
+                                    <td>Permissible responses to the question</td>
+                                    <td>1, Yes | 0, No | 99, Unknown</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Body System</code></td>
+                                    <td>Physiological system the variable belongs to</td>
+                                    <td>Cardiovascular</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Definition</code></td>
+                                    <td>Description of the concept being captured</td>
+                                    <td>Defined as elevated arterial blood pressure diagnosed clinically (systolic >140 mmHg and/or diastolic >90 mmHg), or treated with medication.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Completion Guideline</code></td>
+                                    <td>Instruction text for data collectors to standardize responses</td>
+                                    <td>Indicate 'Yes' if this condition existed prior to admission with this current illness and remains an active medical condition.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Standardized Term Codelist</code></td>
+                                    <td>Reference ontology or terminology system used for harmonization</td>
+                                    <td>SNOMED</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Standardized Term Code</code></td>
+                                    <td>The specific code(s) from the ontology</td>
+                                    <td>38341003, Hypertensive disorder, systemic arterial (disorder)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Metathesaurus Identifier</code></td>
+                                    <td>UMLS Metathesaurus identifier for cross-referencing</td>
+                                    <td>C0020538, Hypertensive disease</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Research Category</code></td>
+                                    <td>Category for research classification</td>
+                                    <td>risk_factor_comor</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Presets (selected)</code></td>
+                                    <td>Links to where the variable is used in disease-specific CRFs</td>
+                                    <td>COVID=1, Dengue=1, Mpox=1, H5Nx=1, ARI=1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p><strong>Example row:</strong> The variable <code>comor_hypertensi</code> captures hypertension information in the Presentation form, with answer options Yes/No/Unknown, mapped to SNOMED CT code 38341003.</p>
+                    </div>
+
+                    <h3>ARChetype CRFs and Templates</h3>
+                    <p>ISARIC works with experts worldwide to create CRFs for priority emerging and infectious diseases. These are called <strong>ARChetype CRFs</strong>.</p>
+                    
+                    <h4>Available ARChetype CRFs (Version 1.2.2)</h4>
+                    <div class="diseases-grid">
+                        <span class="disease-tag">COVID-19</span>
+                        <span class="disease-tag">Dengue</span>
+                        <span class="disease-tag">Chikungunya</span>
+                        <span class="disease-tag">Mpox</span>
+                        <span class="disease-tag">Influenza H5Nx</span>
+                        <span class="disease-tag">Acute Respiratory Infection (ARI)</span>
+                    </div>
+                    
+                    <h4>Population-Specific Modules</h4>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <span class="module-icon">👶</span>
+                            <div>
+                                <strong>Paediatric Module</strong>
+                                <p>Variables applicable for paediatric patients across multiple diseases</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <span class="module-icon">🤰</span>
+                            <div>
+                                <strong>Pregnancy Module</strong>
+                                <p>Variables for pregnant patients across multiple diseases</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Version Identification</h3>
+                    <p>ARC uses a version numbering system to indicate different levels of updates:</p>
+                    <ul>
+                        <li><strong>Major Version:</strong> Significant updates including new events, forms, or diseases</li>
+                        <li><strong>Minor Version:</strong> Smaller updates, new features, or modifications to questions</li>
+                        <li><strong>Patch Version:</strong> Bug fixes, writing improvements, or small corrections</li>
+                    </ul>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Previous ARC versions can be accessed via the repository's releases section. Additional questions can be added to future ARC versions by contacting <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <p>Comprehensive guide to analytical tools for healthcare research and epidemiology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="quick-links-grid">
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="ccp.html">CCP</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="arc.html">ARC</a></li>
+                                <li><a href="bridge.html">BRIDGE</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="redcap.html">REDCap</a></li>
+                                <li><a href="vertex.html">VERTEX</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>For more information about our analytical tools and services.</p>
+                    <p class="contact-email">
+                        <a href="mailto:data@isaric.org">data@isaric.org</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="https://isaric.org" target="_blank">ISARIC</a>
+                    <span class="separator">|</span>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>
+                </div>
+                <p class="footer-copyright">Licensed by ISARIC on behalf of Oxford University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/arc.js"></script>
+</body>
+</html>

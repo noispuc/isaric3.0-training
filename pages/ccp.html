@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCP | ISARIC Data Tools</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ccp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">ISARIC Data Tools</a>
+                <nav class="nav-desktop">
+                    <a href="../index.html">Home</a>
+                    <a href="ccp.html" class="active">CCP</a>
+                    <a href="arc.html">ARC</a>
+                    <a href="bridge.html">BRIDGE</a>
+                    <a href="redcap.html">REDCap</a>
+                    <a href="vertex.html">VERTEX</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero específico do CCP -->
+    <section class="ccp-hero">
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                ← Back to Home
+            </a>
+            <h1>CCP</h1>
+            <p>Clinical Characterisation Protocol</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="ccp-layout">
+            <!-- Menu lateral -->
+            <aside class="sidebar-menu" id="sidebar">
+                <div class="menu-toggle">
+                    <button class="toggle-btn" id="toggleSidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu-item active" data-section="overview">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </span>
+                    <span>Overview</span>
+                </div>
+                <div class="menu-item" data-section="setup">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </span>
+                    <span>Setup & Configuration</span>
+                </div>
+                <div class="menu-item" data-section="howto">
+                    <span class="menu-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </span>
+                    <span>How to</span>
+                </div>
+            </aside>
+
+            <!-- Conteúdo principal -->
+            <div class="ccp-content">
+                <!-- Overview Section -->
+                <div id="overview" class="content-section active">
+                    <h2>Overview</h2>
+                    
+                    <h3>What is the CCP?</h3>
+                    <p>The <strong>ISARIC-WHO Clinical Characterisation Protocol (CCP)</strong> is a flexible protocol designed to inform the major questions of acute illness from an emerging pathogen or exposure: transmission, natural history (pathogen and host), mechanisms of severity and how to influence them.</p>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>The CCP is designed for collecting data and biological samples rapidly in a globally-harmonised manner following a tiered approach.</p>
+                    </div>
+                    
+                    <h3>Core Principles</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <span class="principle-icon">🏛️</span>
+                            <strong>Governance</strong>
+                            <p>Investigators retain control and decision-making over the data and samples they collect and share.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">🤝</span>
+                            <strong>Consensus</strong>
+                            <p>The CCP is the product of a broad global consensus, approved by the WHO global ethics committee.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">📋</span>
+                            <strong>Preparedness</strong>
+                            <p>Establishing approved procedures in advance should always take priority.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">🔄</span>
+                            <strong>Adaptability</strong>
+                            <p>The protocol can be adapted to requirements and resources as needed.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">🌍</span>
+                            <strong>Harmonisation</strong>
+                            <p>International harmonisation facilitates important collaborative analyses across borders.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Prior Uses</h3>
+                    <p>The CCP has been in use around the world since the first version was released in 2014. It was used for the first clinical characterisation of novel coronavirus in Wuhan in 2020. In collaboration with its sister study GenOMICC, the CCP was used to discover a genetic variant (in TYK2) that led directly to a new, effective treatment for Covid-19, baricitinib. It has been used to support studies of H5N1 influenza, MERS, Ebola, Zika, tick-borne encephalitis virus (TBEV), Mpox, and many other outbreaks around the world.</p>
+                    
+                    <h3>Primary Objectives</h3>
+                    <div class="objectives-grid">
+                        <div class="objective-group">
+                            <h4>Characterise clinical features and pathophysiology</h4>
+                            <ul>
+                                <li>Describe clinical features of the illness</li>
+                                <li>Explain disease pathogenesis and identify therapeutic approaches</li>
+                                <li>Understand risk factors for exposure, severe illness and death</li>
+                                <li>Describe patient trajectories to inform healthcare planning</li>
+                                <li>Describe response to treatment</li>
+                            </ul>
+                        </div>
+                        <div class="objective-group">
+                            <h4>Characterise the causative agent</h4>
+                            <ul>
+                                <li>Describe characteristics of causative agents</li>
+                                <li>Observe pathogen replication and evolution within the host</li>
+                                <li>Characterise host responses to infection and therapy</li>
+                                <li>Identify host genetic variants associated with disease progression</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Integration with ISARIC Tools</h3>
+                    <p>To strengthen partnerships, harmonisation and accelerate response, ISARIC enhanced the standardisation and flexibility of its tools. As a result, ISARIC developed <strong>ARC, BRIDGE, and VERTEX</strong> to operationalise the Clinical Characterisation Protocol (CCP).</p>
+                    
+                    <div class="tools-integration">
+                        <div class="tool-integration">
+                            <strong>ARC</strong>
+                            <p>Question bank for CRF generation</p>
+                        </div>
+                        <div class="tool-integration">
+                            <strong>BRIDGE</strong>
+                            <p>Software tool for CRF generation</p>
+                        </div>
+                        <div class="tool-integration">
+                            <strong>VERTEX</strong>
+                            <p>Data analysis and visualisation platform</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>Toolkits and guidance are available for any research team to set up a study with the Clinical Characterisation Protocol (CCP) and data tools for Dengue, Mpox, H5N1 and COVID-19. For more information, visit the <a href="https://isaricresearch.github.io/CCP/CCP_toolkit" target="_blank">CCP Toolkit</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Setup & Configuration Section -->
+                <div id="setup" class="content-section">
+                    <h2>Setup & Configuration</h2>
+                    
+                    <h3>Tiered Recruitment Approach</h3>
+                    <p>The CCP uses a tiered approach to allow for resource-appropriate implementation. Settings vary in terms of clinical infrastructure, resources and capacity.</p>
+                    
+                    <div class="figure-placeholder">
+                        <div class="image-placeholder">
+                            <img src="../assets/images/ccp_tiered.png" alt="CCP Tiered Recruitment Approach">
+                            <p>Availability of local resources over time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tiers-grid">
+                        <div class="tier-card">
+                            <div class="tier-number">Tier 0</div>
+                            <h4>Data Collection Only</h4>
+                            <p>Routine clinical and laboratory data may be collected. No biological samples obtained for research purposes. Minimum essential clinical data set summarising illness episode and outcome.</p>
+                            <span class="tier-consent">No consent required</span>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-number">Tier 1</div>
+                            <h4>Simple & Stable Samples</h4>
+                            <p>Individual informed consent required. Simple, stable samples that do not require laboratory processing at the recruiting site will be obtained. Includes host DNA/RNA, dried blood spots, and cell samples in preservative.</p>
+                            <span class="tier-consent">Consent required</span>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-number">Tier 2</div>
+                            <h4>Local Laboratory Required</h4>
+                            <p>Individual informed consent required. Samples requiring laboratory processing at the recruiting site will be obtained. Includes blood plasma and serum, and pathogen samples obtained specifically for research.</p>
+                            <span class="tier-consent">Consent required</span>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-number">Tier 3</div>
+                            <h4>Specialist Laboratory Required</h4>
+                            <p>Individual informed consent required. Samples requiring specialist laboratory facilities at the recruiting site will be obtained. Includes specialist research immunology assays and pharmacokinetics studies.</p>
+                            <span class="tier-consent">Consent required</span>
+                        </div>
+                    </div>
+                    
+                    <h3>Implementing the CCP</h3>
+                    <p>The CCP enables a structured approach to studying emerging health threats. To start implementing the CCP:</p>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div>
+                                <strong>Download the protocol</strong>
+                                <p>Read the latest version of the <a href="https://isaric.org/resources/clinical-characterisation-protocol/" target="_blank">ISARIC Global Clinical Characterisation Protocol</a></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div>
+                                <strong>Appoint a Principal Investigator</strong>
+                                <p>Oversee the study and ensure protocol adherence</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div>
+                                <strong>Align with health facility strategy</strong>
+                                <p>Ensure the study aligns with the health facility's response strategy</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div>
+                                <strong>Secure approvals</strong>
+                                <p>Obtain ethical approval and necessary funding</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div>
+                                <strong>Acknowledge ISARIC</strong>
+                                <p>Inform ISARIC if the protocol is used</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Inclusion Criteria</h3>
+                    <p>This study will enrol eligible patients who meet the criteria below:</p>
+                    <ul>
+                        <li><strong>CONFIRMED INFECTION</strong> - Confirmed infection with an emerging or high-consequence pathogen</li>
+                        <li><strong>SUSPECTED INFECTION</strong> - Suspected infection with an emerging or high-consequence pathogen</li>
+                        <li><strong>CONFIRMED EXPOSURE</strong> - Confirmed exposure to a pathogen, toxin, chemical or other exposure of public health interest</li>
+                        <li><strong>SUSPECTED EXPOSURE</strong> - Suspected exposure to a pathogen, toxin, chemical or other exposure of public health interest</li>
+                    </ul>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>The protocol has no end date and can be activated upon presentation of an eligible participant or the occurrence of an event of public health interest.</p>
+                    </div>
+                </div>
+
+                <!-- How To Section -->
+                <div id="howto" class="content-section">
+                    <h2>How to</h2>
+                    
+                    <h3>Use Case Report Forms (CRFs)</h3>
+                    <p>CRFs are standardized documents used to systematically collect data from clinical trials and observational studies. CRFs ensure the accurate capture of key information required for protocol adherence.</p>
+                    
+                    <p>ISARIC has approved a variety of Clinical Report Forms (CRFs) for different diseases, studies, and scoring systems. This guide demonstrates how to effectively use the ISARIC-approved CRFs. For detailed instructions on customizing your CRF, see the <strong>Getting Started with BRIDGE</strong> tutorial.</p>
+                    
+                    <h3>Direct Links to Generate CRFs</h3>
+                    <p>Direct links take you directly to the BRIDGE web application with the relevant template selected. All you need to do is click the "Generate" button.</p>
+                    
+                    <div class="crf-links-grid">
+                        <a href="https://bridge.isaric.org/main/?param=ARChetype%20Disease%20CRF_Mpox" target="_blank" class="crf-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span>Mpox</span>
+                        </a>
+                        <a href="https://bridge.isaric.org/main/?param=ARChetype%20Disease%20CRF_Dengue" target="_blank" class="crf-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span>Dengue</span>
+                        </a>
+                        <a href="https://bridge.isaric.org/main/?param=ARChetype%20Disease%20CRF_H5Nx" target="_blank" class="crf-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span>H5Nx</span>
+                        </a>
+                        <a href="https://bridge.isaric.org/main/?param=ARChetype%20Disease%20CRF_Covid" target="_blank" class="crf-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span>COVID-19</span>
+                        </a>
+                        <a href="https://bridge.isaric.org/main/?param=ARChetype%20Syndromic%20CRF_ARI" target="_blank" class="crf-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            <span>ARI</span>
+                        </a>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <div class="video-container">
+                            <video width="100%" controls>
+                                <source src="../assets/video/crf_from_link.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Video: Generating a CRF from a direct link</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Using Templates</h3>
+                    <p>Templates are pre-selected groups of questions. Users can click on the Templates tab in BRIDGE and select those they want to include in the CRF.</p>
+                    
+                    <p>ISARIC templates allow users to start the CRF creation process based on a set of pre-selected questions that ISARIC has curated for a particular disease or score.</p>
+                    
+                    <ul>
+                        <li><strong>Disease templates</strong> - Generated by the ISARIC network, ensuring questions are adequate and sufficient to answer pertinent research questions</li>
+                        <li><strong>Score templates</strong> - Subsets of questions necessary to compute commonly used clinical scores (e.g., Charlson Comorbidity Index, SOFA)</li>
+                    </ul>
+                    
+                    <p>If multiple templates are selected, the obtained CRF is the union of the questions from all the selected templates.</p>
+                    
+                    <div class="note-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <p>For more information about the ISARIC CRF creation process or to request specific templates, please write to <a href="mailto:data@isaric.org">data@isaric.org</a>.</p>
+                    </div>
+                    
+                    <h3>Additional Resources</h3>
+                    <div class="links-icons">
+                        <a href="https://isaric.org/resources/clinical-characterisation-protocol/" target="_blank" class="icon-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16v16H4z"/>
+                                <polyline points="4 9 12 13 20 9"/>
+                                <line x1="12" y1="13" x2="12" y2="22"/>
+                            </svg>
+                            <span>CCP Protocol</span>
+                        </a>
+                        <a href="https://isaric.org/resources/data/case-report-forms/" target="_blank" class="icon-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <span>CRF Documentation</span>
+                        </a>
+                        <a href="https://isaricresearch.github.io/CCP/CCP_toolkit" target="_blank" class="icon-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            <span>CCP Toolkit</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <p>Comprehensive guide to analytical tools for healthcare research and epidemiology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="quick-links-grid">
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="ccp.html">CCP</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="arc.html">ARC</a></li>
+                                <li><a href="bridge.html">BRIDGE</a></li>
+                            </ul>
+                        </div>
+                        <div class="quick-links-col">
+                            <ul>
+                                <li><a href="redcap.html">REDCap</a></li>
+                                <li><a href="vertex.html">VERTEX</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>For more information about our analytical tools and services.</p>
+                    <p class="contact-email">
+                        <a href="mailto:data@isaric.org">data@isaric.org</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="https://isaric.org" target="_blank">ISARIC</a>
+                    <span class="separator">|</span>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>
+                </div>
+                <p class="footer-copyright">Licensed by ISARIC on behalf of Oxford University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/ccp.js"></script>
+</body>
+</html>
