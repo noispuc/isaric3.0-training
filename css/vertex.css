@@ -50,6 +50,52 @@
     padding: 2rem;
     overflow-x: auto;
 }
+/* Documentation Bullet Points */
+.documentation-bullet-points {
+    background: #F8FAFC;
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #EE031E;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.documentation-bullet-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.documentation-bullet-points li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #334155;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.documentation-bullet-points li:last-child {
+    margin-bottom: 0;
+}
+
+.documentation-bullet-points li::before {
+    content: "•";
+    color: #EE031E;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+.documentation-bullet-points li code {
+    background: #E2E8F0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    color: #EE031E;
+    font-family: monospace;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {

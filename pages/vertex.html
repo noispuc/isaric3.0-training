@@ -250,30 +250,111 @@ docker run -it --rm -v "$PWD":/app -p 8050:8050 isaric-vertex gunicorn --workers
     <h2>How to</h2>
     
     <h3>Creating a New VERTEX Project</h3>
-    <p>VERTEX is intended to run multiple projects. If you have a REDCap database that was created using ISARIC BRIDGE and have API access for your database, then you should be able to add a new project to your local VERTEX and display outputs from your analysis in a similar manner to the existing projects.</p>
-    
-    <p>For more information about creating a new project in VERTEX, please refer to the following guides. We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
-    
-    <div class="note-box">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <p>We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
+    <p>VERTEX is intended to run one or multiple projects simultaneasly. Each project consits of two main section. The first section is the Config File of the project that contains especifics of that project like the REDCap API token and URL, the Insight Panels you plan to be shown (more on Insght Panels later in the text) and some VERTEX configurations. The second section is the Insight Panels, a set of python files that produces the graphs and tables you want to be shown in VERTEX.</p>
+
+    <h4>Config File</h4>
+    <p>First lets start talking about the Config File, the Config File is a .json file that has all the little especifications of that Project so that VERTEX can display everything inside it as you wish. Below there will be the structure of the Config File and a little explanation of each variable.</p>
+
+    <h5>config_file.json</h5>
+    <pre><code>
+        {
+            "project_name": "",
+            "api_url": "",
+            "api_key": "",
+            "map_layout_center_latitude": 6,
+            "map_layout_center_longitude": -75,
+            "map_layout_zoom": 1.7,
+            "save_public_outputs": false,
+            "save_filtered_public_outputs": false,
+            "public_path": "PUBLIC/",
+            "is_public": false,
+            "project_owner": "",
+            "insight_panels_path": "insight_panels/",
+            "insight_panels": [
+                "",
+            ]
+        }
+    </code></pre>
+
+    <div class="documentation-bullet-points">
+        <ul>
+            <li><strong>"project_name":</strong> Defines the name of the project.</li>
+            <li><strong>"api_url":</strong> Defines the API URL used by the system.</li>
+            <li><strong>"api_key":</strong> Defines the authentication key for the API.</li>
+            <li><strong>"map_layout_center_latitude":</strong> Defines the initial center latitude of the map.</li>
+            <li><strong>"map_layout_center_longitude":</strong> Defines the initial center longitude of the map.</li>
+            <li><strong>"map_layout_zoom":</strong> Defines the initial zoom level of the map.</li>
+            <li><strong>"save_public_outputs":</strong> Indicates whether public outputs should be saved.</li>
+            <li><strong>"save_filtered_public_outputs":</strong> Indicates whether filtered public outputs should be saved.</li>
+            <li><strong>"public_path":</strong> Defines the path where public files will be stored.</li>
+            <li><strong>"is_public":</strong> Indicates whether the project should be treated as public.</li>
+            <li><strong>"project_owner":</strong> Defines the owner or person responsible for the project.</li>
+            <li><strong>"insight_panels_path":</strong> Defines the path where insight panels are stored.</li>
+            <li><strong>"insight_panels":</strong> Defines the list or configuration of insight panels.</li>
+        </ul>
     </div>
     
-    <h3>Adding Insight Panels</h3>
-    <p>For all projects, the remaining tabs should each be relevant to a research question or a moment/event in the patient's journey. Each tab can be expanded to show one or more buttons, which may break this down further into group of related variables e.g. demographics and comorbidities. Each button will then open an object called an insight panel.</p>
-    
-    <p>Insight panels show the outputs of an analysis pipeline. At this time, this will mostly involve descriptive tables and summary figures displaying counts or proportions. We will continue to add new analyses as we build a larger collection of RAPIDs. As with the base page, analysis projects will have a tab for Filters and Controls and the code will be executed again if you filter the participants. This is not possible for static projects, which display fixed outputs.</p>
-    
+    <h3>Insight Panels</h3>
+    <p>Now lets talk about the elephant in the room, the Insigh Panels. Here is where the magic really happens, where you are going to produce all your analytical work, a Insight Panel is a very simple concept and has a simple struture. Every Insight Panel need to start with the following code:</p>
+
+    <pre><code>
+    import vertex.IsaricDraw as idw
+    import vertex.IsaricAnalytics as ia
+
+
+    def define_button():
+        """
+        Defines the button in the main dashboard menu
+        """
+
+        button_item = ""
+        button_label = ""
+        output = {"item": button_item, "label": button_label}
+        return output
+
+
+    def create_visuals(df_map, df_forms_dict, dictionary, quality_report, filepath, suffix, save_inputs):
+        """
+        Create all visuals in the insight panel from the RAP dataframe
+        """
+
+        return ()
+    </code></pre>
+
+    <p>Lets first talk about the function <code>define_button()</code>, this function is where this Insight Panel will be position inside the VERTEX ui. The variable <code>button_item</code> is the menu where the Insight Panel is located and the variable <code>button_label</code> is the actual button that executes this Insight Panel. Below is a visual explanation of what the "menu" and "button" really are in the ui:</p>
+
     <div class="figure-placeholder">
         <div class="image-placeholder">
-            <img src="../assets/images/vertex_starting-insight-panel_2.png" alt="VERTEX Insight Panel">
-            <p>VERTEX - Insight Panel</p>
+            <img src="../assets/images/VERTEX_define_button_example.png" alt="VERTEX define_button example">
+            <p>VERTEX - Ingight Panel location example</p>
         </div>
     </div>
+
+    <p>To produce the same as the figure above you just edit the code this way:</p>
+
+    <pre><code>
+    import vertex.IsaricDraw as idw
+    import vertex.IsaricAnalytics as ia
+
+
+    def define_button():
+        """
+        Defines the button in the main dashboard menu
+        """
+
+        button_item = "Enrolment"
+        button_label = "Enrolment Details"
+        output = {"item": button_item, "label": button_label}
+        return output
+
+
+    def create_visuals(df_map, df_forms_dict, dictionary, quality_report, filepath, suffix, save_inputs):
+        """
+        Create all visuals in the insight panel from the RAP dataframe
+        """
+
+        return ()
+    </code></pre>
 </div>
     </div>
     </div>
