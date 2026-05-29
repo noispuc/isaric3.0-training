@@ -187,110 +187,63 @@ body {
   opacity: 0.8;
 }
 
+
 /* ============================================
-   ECOSYSTEM LAYOUT - Imagem à esquerda, painel à direita
+   TOOL CARDS SECTION - Cards Menores
    ============================================ */
-.ecosystem-layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    margin: 1rem 0;
+.tool-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
 }
 
-.ecosystem-container {
-    flex: 0 0 80%;
+.tool-card {
+  flex: 0 0 auto;
+  width: 160px;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
-.ecosystem-map {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-light);
+.tool-card:hover {
+  transform: translateY(-2px);
 }
 
-/* Info Panel */
-.info-panel {
-    flex: 0 0 calc(20% - 2rem);
-    background: #F4FCFB;
-    border-radius: var(--radius);
-    border: 1px solid rgba(0, 139, 128, 0.2);
-    padding: 1.5rem;
-    position: sticky;
-    top: 60px;
+.tool-btn {
+  background: #EE031E;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  display: inline-block;
+  width: 100%;
 }
 
-.info-placeholder {
-    text-align: center;
-    color: #717182;
-    font-size: 0.875rem;
+.tool-card:hover .tool-btn {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  filter: brightness(1.1);
 }
 
-.info-placeholder svg {
-    margin-bottom: 1rem;
+.tool-btn-dark {
+  background: #414141;
 }
 
-.info-content {
-    animation: fadeIn 0.3s ease;
-}
-
-.info-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #008B80;
-    margin-bottom: 0.5rem;
-}
-
-.info-content h4 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #1D293D;
-    margin: 1rem 0 0.5rem;
-}
-
-.info-content p {
-    font-size: 0.875rem;
-    color: #000000;
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
-}
-
-.info-content .tool-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #008B80;
-    color: white;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.info-content .tool-link:hover {
-    background: #00A896;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .ecosystem-layout {
-        flex-direction: column;
-    }
-    
-    .ecosystem-container {
-        flex: 0 0 100%;
-    }
-    
-    .info-panel {
-        flex: 0 0 100%;
-        position: static;
-    }
+.tool-card p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.2;
+  opacity: 0.8;
+  margin: 0;
 }
 
 
@@ -532,71 +485,7 @@ body {
   display: block;
 }
 
-/* ============================================
-   KEY FEATURES SECTION
-   ============================================ */
-.key-features {
-  background: #F4FCFB;
-  padding: 1rem 0;
-}
 
-.key-features h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #000000;
-}
-
-.features-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.feature-card {
-  flex: 0 0 auto;
-  width: 220px;
-  text-align: center;
-  padding: 0.25rem;
-  background: transparent;
-  border: none;
-}
-
-.feature-icon {
-  width: 56px;
-  height: 56px;
-  background: #008B80;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-.feature-icon svg {
-  width: 28px;
-  height: 28px;
-  color: white;
-}
-
-.feature-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: #000000;
-}
-
-.feature-card p {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #000000;
-  opacity: 0.75;
-  line-height: 1.25;
-}
 
 /* ============================================
    FOOTER - Fundo #1D293D

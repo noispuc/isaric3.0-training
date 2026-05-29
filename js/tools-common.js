@@ -1,5 +1,6 @@
 // ============================================
-// VERTEX Page - Menu Lateral e Seções
+// Tool Pages - Menu Lateral e Seções
+// Compartilhado por CCP, ARC, BRIDGE, REDCap, VERTEX
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,13 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Navegação entre seções
+    // Navegação entre seções — detecção automática
     const menuItems = document.querySelectorAll('.menu-item');
-    const sections = {
-        overview: document.getElementById('overview'),
-        setup: document.getElementById('setup'),
-        howto: document.getElementById('howto')
-    };
+    const sections = {};
+    
+    document.querySelectorAll('.content-section').forEach(section => {
+        if (section.id) {
+            sections[section.id] = section;
+        }
+    });
     
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sections[sectionId]) {
                 sections[sectionId].classList.add('active');
                 
-                // 🔧 CORREÇÃO: Rolar para o topo da nova seção
+                // Rolar para o topo da nova seção
                 sections[sectionId].scrollIntoView({ 
                     behavior: 'smooth', 
                     block: 'start' 

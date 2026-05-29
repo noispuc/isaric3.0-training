@@ -2,31 +2,31 @@
 
 Site de treinamento interativo para pesquisadores da área da saúde, documentando o ecossistema de ferramentas analíticas do ISARIC.
 
-## 🌐 Suporte a Idiomas
-- Português (BR)
-- English (US)  
-- Español
-
 ## 🏗️ Estrutura do Projeto
-├── index.html # Página principal com mapa interativo
-├── pages/ # Templates das páginas de ferramentas
-│ ├── arc.html
-│ ├── bridge.html
-│ ├── ccp.html
-│ └── vertex.html
-├── css/
-│ ├── main.css # Estilos globais e tema shadcn/ui
-│ └── .css # Estilos específicos por ferramenta
-├── js/
-│ └── main.js # Lógica do site (idioma, mapa interativo)
-├── data/ # Conteúdos por idioma
-│ ├── index_.html # Conteúdo da página inicial
-│ └── _.html # Conteúdo das ferramentas
-└── assets/
-├── images/
-│ └── ecosystem.png # Mapa do ecossistema
-└── docs/ # Documentos para download
 
+```
+├── index.html                  # Página principal com mapa interativo
+├── pages/                      # Páginas das ferramentas
+│   ├── arc.html
+│   ├── bridge.html
+│   ├── ccp.html
+│   ├── redcap.html
+│   └── vertex.html
+├── css/
+│   ├── style.css               # Estilos globais (home, header, footer, hero)
+│   ├── tools-common.css        # Estilos compartilhados entre páginas de ferramentas
+│   ├── arc.css                 # Estilos específicos do ARC
+│   ├── bridge.css              # Estilos específicos do BRIDGE
+│   ├── ccp.css                 # Estilos específicos do CCP
+│   ├── redcap.css              # Estilos específicos do REDCap
+│   └── vertex.css              # Estilos específicos do VERTEX
+├── js/
+│   ├── script.js               # Lógica da home (mapa interativo)
+│   └── tools-common.js         # Lógica compartilhada (sidebar, navegação entre seções)
+└── assets/
+    ├── images/                 # Imagens e capturas de tela
+    └── video/                  # Vídeos tutoriais
+```
 
 ## 🚀 Como executar localmente
 
@@ -34,24 +34,18 @@ Site de treinamento interativo para pesquisadores da área da saúde, documentan
 2. Abra o `index.html` com Live Server do VSCode
 3. Ou use qualquer servidor HTTP estático
 
-## 📝 Como atualizar conteúdo
-
-1. Acesse a pasta `/data/`
-2. Edite o arquivo correspondente ao idioma desejado
-3. Ex: `index_pt.html` para página inicial em português
-4. `vertex_en.html` para página do VERTEX em inglês
-
 ## 🎯 Funcionalidades
 
 - **Mapa interativo**: Hover mostra descrição da ferramenta, clique redireciona
-- **Multilíngue**: Troca de idioma persistente (localStorage)
-- **Design responsivo**: Baseado em shadcn/ui
+- **Design responsivo**: Layout adaptável para mobile e desktop
 - **User Roles Info**: Hover nos roles mostra descrições detalhadas
+- **Sidebar navegável**: Menu lateral com toggle nas páginas de ferramentas
 
 ## 🔧 Tecnologias
 
-- HTML5/CSS3 (Tailwind CSS + shadcn/ui theme)
+- HTML5 / CSS3 (Vanilla)
 - JavaScript Vanilla
+- Google Fonts (Inter)
 - GitHub Pages (deploy)
 
 ## 📄 Licença
