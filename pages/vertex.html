@@ -250,30 +250,220 @@ docker run -it --rm -v "$PWD":/app -p 8050:8050 isaric-vertex gunicorn --workers
     <h2>How to</h2>
     
     <h3>Creating a New VERTEX Project</h3>
-    <p>VERTEX is intended to run multiple projects. If you have a REDCap database that was created using ISARIC BRIDGE and have API access for your database, then you should be able to add a new project to your local VERTEX and display outputs from your analysis in a similar manner to the existing projects.</p>
-    
-    <p>For more information about creating a new project in VERTEX, please refer to the following guides. We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
-    
-    <div class="note-box">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#008B80">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <p>We will add more detailed technical guides about creating new insight panels and contributing to RAPIDs in due course.</p>
+
+    <p>VERTEX is designed to run one or multiple projects at the same time. A project is a self-contained workspace that defines which data should be loaded, how the dashboard should be configured, and which analyses should be displayed to the user. In practice, each VERTEX project is built around two main components: a <code>Config File</code> and a set of <code>Insight Panels</code>.</p>
+
+    <p>The <code>Config File</code> contains the project-level settings, such as the REDCap API URL and key, the initial map configuration, the project owner, output-saving options, and the list of Insight Panels that should be available in the dashboard. The <code>Insight Panels</code> are Python files responsible for generating the charts, tables, text blocks, and other analytical outputs shown inside VERTEX.</p>
+
+    <h4>Config File</h4>
+
+    <p>Let's start with the <code>Config File</code>. The Config File is a <code>.json</code> file that tells VERTEX how the project should behave. It defines how the project connects to the data source, how the map should be displayed, where public outputs should be saved, and which Insight Panels should appear in the dashboard. Below is the basic structure of a VERTEX Config File, followed by a short explanation of each variable.</p>
+
+    <h5>config_file.json</h5>
+
+    <pre><code>{
+    "project_name": "",
+    "api_url": "",
+    "api_key": "",
+    "map_layout_center_latitude": 6,
+    "map_layout_center_longitude": -75,
+    "map_layout_zoom": 1.7,
+    "save_public_outputs": false,
+    "save_filtered_public_outputs": false,
+    "public_path": "PUBLIC/",
+    "is_public": false,
+    "project_owner": "",
+    "insight_panels_path": "insight_panels/",
+    "insight_panels": [
+        ""
+    ]
+}</code></pre>
+
+    <div class="documentation-bullet-points">
+        <ul>
+            <li><strong>"project_name":</strong> Defines the name of the project.</li>
+            <li><strong>"api_url":</strong> Defines the API URL used to retrieve the project data.</li>
+            <li><strong>"api_key":</strong> Defines the authentication key used to connect to the API.</li>
+            <li><strong>"map_layout_center_latitude":</strong> Defines the initial center latitude of the map.</li>
+            <li><strong>"map_layout_center_longitude":</strong> Defines the initial center longitude of the map.</li>
+            <li><strong>"map_layout_zoom":</strong> Defines the initial zoom level of the map.</li>
+            <li><strong>"save_public_outputs":</strong> Indicates whether public dashboard outputs should be saved.</li>
+            <li><strong>"save_filtered_public_outputs":</strong> Indicates whether filtered public outputs should be saved.</li>
+            <li><strong>"public_path":</strong> Defines the folder where public files will be stored.</li>
+            <li><strong>"is_public":</strong> Indicates whether the project should be treated as a public project.</li>
+            <li><strong>"project_owner":</strong> Defines the owner or person responsible for the project.</li>
+            <li><strong>"insight_panels_path":</strong> Defines the folder where the Insight Panel Python files are stored.</li>
+            <li><strong>"insight_panels":</strong> Defines the list of Insight Panels that should be loaded into the dashboard.</li>
+        </ul>
     </div>
     
-    <h3>Adding Insight Panels</h3>
-    <p>For all projects, the remaining tabs should each be relevant to a research question or a moment/event in the patient's journey. Each tab can be expanded to show one or more buttons, which may break this down further into group of related variables e.g. demographics and comorbidities. Each button will then open an object called an insight panel.</p>
-    
-    <p>Insight panels show the outputs of an analysis pipeline. At this time, this will mostly involve descriptive tables and summary figures displaying counts or proportions. We will continue to add new analyses as we build a larger collection of RAPIDs. As with the base page, analysis projects will have a tab for Filters and Controls and the code will be executed again if you filter the participants. This is not possible for static projects, which display fixed outputs.</p>
-    
+    <h3>Insight Panels</h3>
+
+    <p>Insight Panels are the core analytical components of VERTEX. While the Config File defines the project setup, the Insight Panels define what the user will actually see in the dashboard. Each Insight Panel is a Python file that creates a specific analytical view, such as an enrolment overview, clinical summary, treatment analysis, data quality report, or any other project-specific analysis.</p>
+
+    <p>Each Insight Panel must follow a standard structure so that VERTEX can identify where the panel should appear in the interface and which visuals should be rendered. At a minimum, every Insight Panel needs two functions: <code>define_button()</code> and <code>create_visuals(...)</code>.</p>
+
+    <pre><code>import vertex.IsaricDraw as idw
+import vertex.IsaricAnalytics as ia
+
+
+def define_button():
+    """
+    Defines the button in the main dashboard menu.
+    """
+
+    button_item = ""
+    button_label = ""
+    output = {"item": button_item, "label": button_label}
+    return output
+
+
+def create_visuals(df_map, df_forms_dict, dictionary, quality_report, filepath, suffix, save_inputs):
+    """
+    Creates all visuals for the Insight Panel.
+    """
+
+    return ()</code></pre>
+
+    <p>Let's first look at the <code>define_button()</code> function. This function defines where the Insight Panel will appear inside the VERTEX user interface. The <code>button_item</code> variable represents the menu group where the Insight Panel will be placed. The <code>button_label</code> variable represents the actual button that the user will click to open that Insight Panel. In other words, <code>button_item</code> controls the dashboard section, while <code>button_label</code> controls the name of the specific analytical view inside that section.</p>
+
     <div class="figure-placeholder">
         <div class="image-placeholder">
-            <img src="../assets/images/vertex_starting-insight-panel_2.png" alt="VERTEX Insight Panel">
-            <p>VERTEX - Insight Panel</p>
+            <img src="../assets/images/VERTEX_define_button_example.png" alt="VERTEX define_button example">
+            <p>VERTEX - Insight Panel location example</p>
         </div>
     </div>
+
+    <p>To reproduce the structure shown in the figure above, the <code>define_button()</code> function should be configured as follows:</p>
+
+    <pre><code>import vertex.IsaricDraw as idw
+import vertex.IsaricAnalytics as ia
+
+
+def define_button():
+    """
+    Defines the button in the main dashboard menu.
+    """
+
+    button_item = "Enrolment"
+    button_label = "Enrolment Details"
+    output = {"item": button_item, "label": button_label}
+    return output
+
+
+def create_visuals(df_map, df_forms_dict, dictionary, quality_report, filepath, suffix, save_inputs):
+    """
+    Creates all visuals for the Insight Panel.
+    """
+
+    return ()</code></pre>
+
+    <p>Now let's address the second function, <code>create_visuals(...)</code>. This function is simpler than it may look. Its purpose is to generate all the figures, tables, and text blocks that will be displayed inside the Insight Panel. The first four parameters, <code>df_map</code>, <code>df_forms_dict</code>, <code>dictionary</code>, and <code>quality_report</code>, are data-related. The <code>df_map</code> parameter is the main project dataset stored as a <code>pandas</code> DataFrame. It contains the core subject-level information used for maps, filters, and most dashboard analyses. The <code>df_forms_dict</code> parameter is a dictionary where each key represents a form name and each value is a <code>pandas</code> DataFrame containing the data for that specific form. The <code>dictionary</code> parameter is the data dictionary, also stored as a DataFrame, and describes the project variables, including field names, labels, field types, form names, sections, and branching logic when available. The <code>quality_report</code> parameter contains data quality information returned by the REDCap/API pipeline, such as validation results, missing values, or inconsistencies found in the data.</p>
+
+    <p>The remaining parameters are related to file generation and output control. The <code>filepath</code> parameter defines the base path where generated dashboard outputs, figure inputs, metadata, CSV files, and public artifacts should be saved. The <code>suffix</code> parameter works as an identifier for the Insight Panel, usually based on the panel file name, and helps organize graph IDs and output folders. Finally, <code>save_inputs</code> is a boolean flag that controls whether the input data and metadata used to generate each visual should be saved.</p>
+
+    <p>Inside the <code>create_visuals(...)</code> function, the main goal is to define all the visuals that will be generated for that specific Insight Panel. This usually includes preparing the required data, applying transformations or aggregations, creating the charts, and returning the final figures in a structured way so that VERTEX can render them in the dashboard. Every figure included in the return must necessarily be either a native <code>Plotly</code> figure or a figure generated through one of the available <code>IsaricDraw</code> functions. Although using pure <code>Plotly</code> is possible, we strongly recommend using <code>IsaricDraw</code> whenever possible, because it already follows the project’s visual standards, reduces repetitive code, and makes Insight Panels easier to maintain and scale.</p>
+
+    <p>It is also important to note that the order of the figures in the <code>return</code> statement directly affects the order in which they will appear in VERTEX. For example, if the function returns <code>(fig_patients_bysite, disclaimer)</code>, the enrolment chart will be displayed first and the disclaimer will be displayed after it.</p>
+
+    <pre><code>import pandas as pd
+import vertex.IsaricDraw as idw
+
+
+def define_button():
+    """
+    Defines the button in the main dashboard menu.
+    """
+
+    # Insight Panels are grouped by button_item.
+    # Multiple Insight Panels can share the same button_item,
+    # which means they will appear under the same dashboard menu group.
+    # However, the combination of button_item and button_label must be unique.
+
+    button_item = "Enrolment"
+    button_label = "Enrolment Details"
+    output = {"item": button_item, "label": button_label}
+    return output
+
+
+def create_visuals(df_map, df_forms_dict, dictionary, quality_report, filepath, suffix, save_inputs):
+    """
+    Creates all visuals for the Insight Panel.
+    """
+
+    df_sunburst = (
+        df_map[["subjid", "site", "filters_country"]]
+        .groupby(["site", "filters_country"])
+        .nunique()
+        .reset_index()
+    )
+
+    df_sunburst["site"] = df_sunburst["site"].str.split("-", n=1).str[0]
+
+    fig_patients_bysite = idw.fig_sunburst(
+        df_sunburst,
+        title="Enrolment by site*",
+        path=["filters_country", "site"],
+        values="subjid",
+        suffix=suffix,
+        filepath=filepath,
+        save_inputs=save_inputs,
+        graph_label="Site Enrolment*",
+        graph_about="Shows the number of enrolled subjects by country and site.",
+    )
+
+    disclaimer_text = (
+        "Disclaimer: the underlying data for these figures is synthetic data. "
+        "Results may not be clinically relevant or accurate."
+    )
+
+    disclaimer_df = pd.DataFrame({"paragraphs": [disclaimer_text]})
+
+    disclaimer = idw.fig_text(
+        disclaimer_df,
+        suffix=suffix,
+        filepath=filepath,
+        save_inputs=save_inputs,
+        graph_label="*DISCLAIMER: SYNTHETIC DATA*",
+        graph_about=disclaimer_text,
+    )
+
+    return (fig_patients_bysite, disclaimer)</code></pre>
+
+    <div class="figure-placeholder">
+        <div class="image-placeholder">
+            <img src="../assets/images/final_example_VERTEX.jpeg" alt="VERTEX complete Insight Panel example">
+            <p>VERTEX - Complete Insight Panel example</p>
+        </div>
+    </div>
+
+    <p>Below will be a final example of how the <code>config_file.json</code> should be.</p>
+
+    <pre><code>
+        {
+            "project_name": "ARChetype CRF mpox (Synthetic)",
+            "api_url": "https://ncov.medsci.ox.ac.uk/api/",
+            "api_key": "27B9F4C93C8C2BCDB4EFCA9DA8717DC0",
+            "map_layout_center_latitude": 6,
+            "map_layout_center_longitude": -75,
+            "map_layout_zoom": 1.7,
+            "save_public_outputs": false,
+            "save_filtered_public_outputs": false,
+            "public_path": "PUBLIC/",
+            "is_public": false,
+            "project_owner": "alasdari.wilson@dtc.ox.ac.uk",
+            "insight_panels_path": "insight_panels/",
+            "insight_panels": [
+                    "enrolment_details",
+                    "presentation_demogcomor",
+                    "presentation_symptoms",
+                    "lesion_assessment",
+                    "treatments_interventions",
+                    "outcomes_complications"
+            ]
+        }
+    </code></pre>
+
 </div>
     </div>
     </div>
